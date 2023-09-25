@@ -1,0 +1,13 @@
+<h1>Users</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.email %>
+      <%= link_to 'Create Event A', events_create_event_a_path(user_id: user.id) %>
+      <%= link_to 'Create Event B', events_create_event_b_path(user_id: user.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Send Event A Notifications', events_send_notification_a_path, method: :get %>
+<%= link_to 'Send Event B Notifications', events_send_notification_b_path, method: :get %>

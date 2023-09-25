@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'events#index'
+  get 'events', to: "events#index"
+  get 'events/create_event_a'
+  get 'events/create_event_b'
+  get 'events/send_notification_a', to: "events#send_notification_a"
+  get 'events/send_notification_b', to: "events#send_notification_b"
 end
